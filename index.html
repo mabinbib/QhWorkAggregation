@@ -1,1 +1,192 @@
-test
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<title>QH工作门户</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#07111f;
+    font-family:Arial,Helvetica,sans-serif;
+    color:#fff;
+    padding:20px;
+}
+
+/* 顶部 */
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-size:28px;
+    color:#4fc3ff;
+    margin-bottom:8px;
+}
+
+.header p{
+    color:#8ca6c0;
+    font-size:14px;
+}
+
+/* 分类 */
+.section{
+    margin-bottom:18px;
+    border-radius:16px;
+    overflow:hidden;
+    background:rgba(20,35,60,0.9);
+    border:1px solid rgba(79,195,255,0.2);
+    box-shadow:0 0 15px rgba(79,195,255,0.08);
+}
+
+/* 分类标题 */
+.section-title{
+    padding:18px;
+    font-size:18px;
+    font-weight:bold;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    user-select:none;
+}
+
+.section-title:hover{
+    background:rgba(79,195,255,0.08);
+}
+
+.arrow{
+    transition:0.3s;
+}
+
+.arrow.rotate{
+    transform:rotate(90deg);
+}
+
+/* 卡片区域 */
+.links{
+    padding:0 15px 15px;
+    display:none;
+}
+
+.links.show{
+    display:block;
+}
+
+/* 卡片 */
+.card{
+    display:block;
+    background:linear-gradient(135deg,#0d1f35,#12304d);
+    border-radius:14px;
+    padding:16px;
+    margin-top:12px;
+    text-decoration:none;
+    color:#fff;
+    border:1px solid rgba(79,195,255,0.15);
+    transition:0.25s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    border-color:#4fc3ff;
+    box-shadow:0 0 18px rgba(79,195,255,0.18);
+}
+
+.card-title{
+    font-size:16px;
+    font-weight:bold;
+    color:#4fc3ff;
+    margin-bottom:6px;
+}
+
+.card-desc{
+    font-size:13px;
+    color:#a8bfd8;
+    line-height:1.5;
+}
+
+/* 底部 */
+.footer{
+    text-align:center;
+    margin-top:30px;
+    color:#5f7893;
+    font-size:12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>QH 工作门户</h1>
+    <p>聚合导航 · 智慧办公</p>
+</div>
+
+<!-- 智慧考勤 -->
+<div class="section">
+
+    <div class="section-title" onclick="toggleSection(this)">
+        <span>智慧考勤</span>
+        <span class="arrow">▶</span>
+    </div>
+
+    <div class="links">
+
+        <a class="card" href="https://www.baidu.com" target="_blank">
+            <div class="card-title">考勤系统</div>
+            <div class="card-desc">
+                日常签到、考勤记录、异常查询
+            </div>
+        </a>
+
+      
+
+    </div>
+</div>
+
+<!-- 出入管理 -->
+<div class="section">
+
+    <div class="section-title" onclick="toggleSection(this)">
+        <span>出入管理</span>
+        <span class="arrow">▶</span>
+    </div>
+
+    <div class="links">
+
+        <a class="card" href="https://www.github.com" target="_blank">
+            <div class="card-title">访客登记</div>
+            <div class="card-desc">
+                来访人员登记、审批及查询
+            </div>
+        </a>
+
+     
+
+    </div>
+</div>
+
+<div class="footer">
+    QH Work Aggregation Portal
+</div>
+
+<script>
+function toggleSection(el){
+
+    const links = el.nextElementSibling;
+    const arrow = el.querySelector('.arrow');
+
+    links.classList.toggle('show');
+    arrow.classList.toggle('rotate');
+}
+</script>
+
+</body>
+</html>
